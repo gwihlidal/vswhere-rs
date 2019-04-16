@@ -94,7 +94,7 @@ pub struct InstallInfo {
     display_name: String,
     description: String,
     channel_id: String,
-    channel_path: PathBuf,
+    //channel_path: PathBuf,
     #[serde(with = "url_serde")]
     channel_uri: Url,
     engine_path: PathBuf,
@@ -128,7 +128,7 @@ pub struct InstallCatalog {
     product_name: String,
     product_patch_version: String,
     product_pre_release_milestone_suffix: String,
-    product_release: String,
+    //product_release: String,
     product_semantic_version: Version,
     required_engine_version: FourPointVersion,
 }
@@ -518,9 +518,9 @@ impl InstallInfo {
 
     /// Returns the filesystem path to the catalog file for the release channel that a Visual
     /// Studio instance is associated with.
-    pub fn channel_path(&self) -> &Path {
-        &self.channel_path
-    }
+    //pub fn channel_path(&self) -> &Path {
+    //    &self.channel_path
+    //}
 
     /// Returns the URL from where release channel updates are fetched.
     pub fn channel_url(&self) -> &Url {
@@ -630,9 +630,9 @@ impl InstallCatalog {
     }
 
     /// {TODO}
-    pub fn product_release(&self) -> &str {
-        &self.product_release
-    }
+    //pub fn product_release(&self) -> &str {
+    //    &self.product_release
+    //}
 
     /// Returns the semver-compliant version number for a Visual Studio instance.
     pub fn product_semantic_version(&self) -> &Version {
@@ -669,7 +669,7 @@ impl InstallProperties {
 
 #[cfg(test)]
 mod tests {
-    use {Config, FourPointVersion};
+    use crate::{Config, FourPointVersion};
 
     #[test]
     fn test_default() {
